@@ -50,4 +50,22 @@ function calculateTotalCost() {
     console.log(`Total cost: ${totalCost} ADA for ${totalSquares} squares.`);
     // Display the total cost to the user (you can customize this further)
     alert(`Total cost: ${totalCost} ADA for ${totalSquares} squares.`);
+
+// When a user selects a square (e.g., squareNumber = 42)
+const discordName = 'my_discord_user'; // Get the user's Discord name
+fetch('/select_square', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ squareNumber, discordName }),
+})
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data.message); // Display a success message
+    })
+    .catch((error) => {
+        console.error('Error selecting square:', error);
+    });
+    
 }
