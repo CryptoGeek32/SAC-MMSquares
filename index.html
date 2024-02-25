@@ -1,29 +1,18 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Square Selection</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Numbered Squares Purchase</title>
 </head>
 <body>
-    <h1>Select a Square</h1>
+    <h1>Numbered Squares Purchase</h1>
     <input type="text" id="discordName" placeholder="Enter your Discord name">
-    <button onclick="selectSquare()">Select Square</button>
-    <script>
-        async function selectSquare() {
-            const squareNumber = 42; // Example: Replace with the actual square number
-            const discordName = document.getElementById('discordName').value;
-            const response = await fetch('/select_square', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ squareNumber, discordName }),
-            });
-            const data = await response.json();
-            console.log(data.message);
-        }
-    </script>
+    <div class="grid-container">
+        <!-- Squares will be generated dynamically using JavaScript -->
+    </div>
+<button id="calculateButton">Calculate</button>
+    <script src="script.js"></script>
 </body>
 </html>
